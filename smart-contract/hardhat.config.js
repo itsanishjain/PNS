@@ -6,7 +6,7 @@ getting the env varialbes
 
 Note: Always Keep them in env file and never deploy them to git
 
-Your RINKEBY_PRIVATE_KEY is same for all the networks, either it is mainnet or any other network so "KEEP IT SECRET"
+Your MUMBAI_PRIVATE_KEY is same for all the networks, either it is mainnet or any other network so "KEEP IT SECRET"
 
 */
 
@@ -14,7 +14,11 @@ Your RINKEBY_PRIVATE_KEY is same for all the networks, either it is mainnet or a
 
 const ALCHEMY_API_KEY_URL = process.env.ALCHEMY_API_KEY_URL;
 
-const RINKEBY_PRIVATE_KEY = process.env.RINKEBY_PRIVATE_KEY;
+const MUMBAI_PRIVATE_KEY = process.env.MUMBAI_PRIVATE_KEY;
+
+
+console.log("ALCHEMY_API_KEY_URL", ALCHEMY_API_KEY_URL);
+console.log("MUMBAI_PRIVATE_KEY", MUMBAI_PRIVATE_KEY);
 
 
 /* 
@@ -28,9 +32,9 @@ const RINKEBY_PRIVATE_KEY = process.env.RINKEBY_PRIVATE_KEY;
 module.exports = {
   solidity: "0.8.4", // Change accoring to your solidity version
   networks: {
-    rinkeby: {
+    mumbai: {
       url: ALCHEMY_API_KEY_URL,
-      accounts: [RINKEBY_PRIVATE_KEY],
+      accounts: [MUMBAI_PRIVATE_KEY],
     },
     // Add more Networks here
   },

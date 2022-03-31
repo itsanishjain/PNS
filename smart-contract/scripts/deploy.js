@@ -7,7 +7,7 @@ async function main() {
   const Contract = await ethers.getContractFactory("Domains");
   // Deploy the contract
 
-  const domainContract = await Contract.deploy("jain");
+  const domainContract = await Contract.deploy("pns");
 
   // wait unit the contract is mined
   await domainContract.deployed();
@@ -20,7 +20,7 @@ async function main() {
 
   console.log("Contract deployed by:", owner.address)
 
-  const txn = await domainContract.register("itsanish", { value: ethers.utils.parseEther("0.5") });
+  const txn = await domainContract.register("itsanish", { value: ethers.utils.parseEther("0.001") });
   await txn.wait();
 
   const domainOwner = await domainContract.getAddress("itsanish");
